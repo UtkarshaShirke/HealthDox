@@ -11,7 +11,7 @@ from huggingface_hub import InferenceClient
 # Load API keys
 HF_API_KEY = st.secrets["HF_API_KEY"]
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
-SUPABASE_KEY = st.secrets["SUPABASE_KEY"
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
 
 # Load API key
