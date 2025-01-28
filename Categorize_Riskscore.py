@@ -81,37 +81,6 @@ def create_green_heatmap(data):
     except Exception as e:
         st.error(f"Error creating heatmap: {str(e)}")
 
-import streamlit as st
-from dotenv import load_dotenv
-import os
-import pandas as pd
-import plotly.express as px
-from supabase import create_client, Client
-
-# Load environment variables
-load_dotenv()
-
-# Supabase credentials
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-
-# Initialize Supabase client
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
-
-# Function to fetch data from a Supabase table
-def fetch_data(table_name: str):
-    try:
-        # Query data from the specified table
-        response = supabase.table(table_name).select("*").execute()
-        if response.data:
-            return pd.DataFrame(response.data)  # Convert to pandas DataFrame
-        else:
-            st.write(f"No data found in the table '{table_name}'.")
-            return pd.DataFrame()  # Return an empty DataFrame if no data found
-    except Exception as e:
-        st.error(f"An error occurred while fetching data: {str(e)}")
-        return pd.DataFrame()  # Return an empty DataFrame on error
-
 # def create_timeline_chart(data):
 #     try:
 #         st.subheader("Incident Timeline by Severity Level")
