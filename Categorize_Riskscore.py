@@ -1,14 +1,7 @@
-##################  Calculating sum of riskscore#########################
-
 import streamlit as st
-# from dotenv import load_dotenv
-# import os
 import pandas as pd
 import plotly.express as px
 from supabase import create_client, Client
-
-# Load environment variables
-# load_dotenv()
 
 # Supabase credentials
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
