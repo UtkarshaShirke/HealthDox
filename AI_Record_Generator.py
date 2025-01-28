@@ -3,15 +3,15 @@ import streamlit as st
 import random
 import asyncio
 from huggingface_hub import InferenceClient
-import os
-from dotenv import load_dotenv
+# import os
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 # Load API keys
-HF_API_KEY = os.getenv("HF_API_KEY")
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+HF_API_KEY = st.secrets["HF_API_KEY"]
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"
 
 
 # Load API key
