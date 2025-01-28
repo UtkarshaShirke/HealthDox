@@ -2,7 +2,7 @@
 
 import streamlit as st
 from dotenv import load_dotenv
-import os
+# import os
 import pandas as pd
 import plotly.express as px
 from supabase import create_client, Client
@@ -11,8 +11,8 @@ from supabase import create_client, Client
 load_dotenv()
 
 # Supabase credentials
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
 # Initialize Supabase client
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
