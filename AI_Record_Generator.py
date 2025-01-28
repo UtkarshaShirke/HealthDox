@@ -14,9 +14,6 @@ SUPABASE_URL = st.secrets["SUPABASE_URL"]
 SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
 
-# Load API key
-HF_API_KEY = os.getenv("HF_API_KEY")
-
 # Initialize Hugging Face client
 client = InferenceClient(api_key=HF_API_KEY)
 
