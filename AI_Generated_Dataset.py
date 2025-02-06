@@ -2,14 +2,14 @@ import pandas as pd
 import streamlit as st
 import asyncio
 from huggingface_hub import InferenceClient
-import os
-from dotenv import load_dotenv
+# import os
+# from dotenv import load_dotenv
 import re
 
-load_dotenv()
+# load_dotenv()
 
 # Load API keys
-HF_API_KEY = os.getenv("HF_API_KEY")
+HF_API_KEY = st.secrets["HF_API_KEY"]
 
 # Initialize Hugging Face client
 client = InferenceClient(api_key=HF_API_KEY)
